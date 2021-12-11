@@ -62,10 +62,7 @@ class notaController extends Controller
 			$nota = new Nota();
 		}
 		$nota->pontos = $request->get("pontos");
-		$nota->nome = $request->get("nome");
-		$turma->nome = $request->get("nome");
-		$aluno->nome = $request->get("nome");
-		/*$nota->turma = $request->get("turma");*/
+		$nota->aluno = $request->get("aluno");
 		/*$nota->user = Auth::id();*/
 		$nota->save();
 		$request->session()->flash("status", "salvo com sucesso");

@@ -17,6 +17,8 @@ class CreateNotasTable extends Migration
             $table->increments('id');
 			$table->string("pontos",100);
             $table->timestamps();
+					$table->integer("aluno")->unsigned();
+					$table->foreign("aluno")->references("id")->on("aluno");
         });
     }
 

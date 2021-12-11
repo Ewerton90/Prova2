@@ -15,13 +15,13 @@ class AlunoController extends Controller
 	public function listaAlunos(){
 		$alunos = DB::table('aluno AS a')
 							->join('nota AS n',
-							'a.nota', '=', 'n.id')
+							'n.aluno', '=', 'n.id')
 							->join('turma AS t', 'a.turma',
 							'=', 't.id')
 							->select('a.id', 'a.nome',
 							'a.possui','n.pontos AS nota',
 							'n.pontos')
-							->get();	
+							->get();
 		return $alunos;
 	}
 	
@@ -93,9 +93,7 @@ class AlunoController extends Controller
 		$aluno->nome = $request->get("nome");
 		$aluno->email = $request->get("email");
 		$aluno->matricula = $request->get("matricula");
-		/*$turma->nome = $request->get("nome");
 		$aluno->turma = $request->get("turma");
-		$aluno->nota = $request->get("nota");*/
 		
 		if($request->get("possui") == 1){
 			$aluno->possui = 1;

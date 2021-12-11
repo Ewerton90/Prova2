@@ -18,12 +18,12 @@ class CreateAlunosTable extends Migration
 			$table->string("nome",100);
 			$table->string("email",100);
 			$table->string("matricula",100);
-			$table->integer("aluno")->unsigned();
-			$table->foreign("aluno")->references("id")->on("aluno");
+			//$table->integer("aluno")->unsigned();
+			//$table->foreign("aluno")->references("id")->on("aluno");
 			$table->integer("turma")->unsigned();
 			$table->foreign("turma")->references("id")->on("turma");
-			$table->integer("nota")->unsigned();
-			$table->foreign("nota")->references("id")->on("aluno");
+			//$table->integer("nota")->unsigned();
+			//$table->foreign("nota")->references("id")->on("aluno");
             $table->timestamps();
         });
     }
